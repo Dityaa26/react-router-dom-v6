@@ -23,6 +23,14 @@ const Header = () => {
         >
           About
         </NavLink>
+        <NavLink
+          to="/products"
+          className={({ isActive }) =>
+            `${isActive ? "underline underline-offset-[6px]" : ""} px-2`
+          }
+        >
+          Products
+        </NavLink>
       </ul>
     </nav>
   );

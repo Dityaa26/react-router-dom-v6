@@ -4,7 +4,7 @@ import App from './App.jsx'
 import './index.css'
 import { BrowserRouter } from 'react-router-dom'
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
-import {Home, About, OrderSummary, Error} from "./pages/pages.js"
+import {Home, About, OrderSummary, Error, Products, FeaturedProducts, NewProducts} from "./pages/pages.js"
 
 
 export const appRouter = createBrowserRouter([
@@ -23,6 +23,20 @@ export const appRouter = createBrowserRouter([
       {
         path: '/order-summary',
         element: <OrderSummary />,
+      },
+      {
+        path: '/products',
+        element: <Products />,
+        children: [
+          {
+            path: 'featured',
+            element: <FeaturedProducts />
+          },
+          {
+            path: 'new',
+            element: <NewProducts />
+          },
+        ]
       },
     ],
     errorElement: <Error />
