@@ -36,6 +36,10 @@ export const appRouter = createBrowserRouter([
             path: 'new',
             element: <NewProducts />
           },
+          {
+            index: true,
+            element: <FeaturedProducts />
+          }
         ]
       },
     ],
