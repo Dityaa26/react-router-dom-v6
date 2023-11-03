@@ -2,8 +2,7 @@ import React, {lazy, Suspense} from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
-import { BrowserRouter } from "react-router-dom";
-import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import {
   Home,
   // About,
@@ -14,8 +13,9 @@ import {
   NewProducts,
   Users,
   UserDetails,
-  Admin
+  Admin,
 } from "./pages/pages.js";
+
 
 const LazyAbout = lazy(() => import('./pages/About.jsx'))
 
@@ -77,5 +77,5 @@ export const appRouter = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <RouterProvider router={appRouter} />
+    <RouterProvider router={appRouter} />
 );

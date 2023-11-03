@@ -39,6 +39,7 @@ const Header = () => {
         >
           About
         </NavLink>
+        {}
       </ul>
     </nav>
   );
