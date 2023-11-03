@@ -1,4 +1,4 @@
-import React from "react";
+import React, {lazy, Suspense} from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
@@ -6,7 +6,7 @@ import { BrowserRouter } from "react-router-dom";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import {
   Home,
-  About,
+  // About,
   OrderSummary,
   Error,
   Products,
@@ -16,6 +16,9 @@ import {
   UserDetails,
   Admin
 } from "./pages/pages.js";
+
+const LazyAbout = lazy(() => import('./pages/About.jsx'))
+
 
 export const appRouter = createBrowserRouter([
   {
@@ -28,7 +31,11 @@ export const appRouter = createBrowserRouter([
       },
       {
         path: "/about",
-        element: <About />,
+        element: (
+          <Suspense fallback={<div>Loading....</div>}>
+            <LazyAbout />
+          </Suspense>
+        ),
       },
       {
         path: "/order-summary",

@@ -6,7 +6,7 @@ import { userList } from '../utils/constants';
 const Users = () => {
     const [searchParams, setSearchParams] = useSearchParams();
     const showActiveUsers = searchParams.get('filter') === 'active';
-    console.log(showActiveUsers)
+    // console.log(showActiveUsers)
     
   return (
     <div className="flex flex-col">
@@ -18,6 +18,7 @@ const Users = () => {
           Reset Filter
         </button>
       </div>
+      {showActiveUsers && "Showing Active Users"}
       {userList.map((user) => (
         <Link
           key={user.id}

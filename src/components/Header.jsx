@@ -16,12 +16,12 @@ const Header = () => {
           Home
         </NavLink>
         <NavLink
-          to="/about"
+          to="/users"
           className={({ isActive }) =>
             `${isActive ? "underline underline-offset-[6px]" : ""} px-2`
           }
         >
-          About
+          Users
         </NavLink>
         <NavLink
           to="/products"
@@ -30,6 +30,14 @@ const Header = () => {
           }
         >
           Products
+        </NavLink>
+        <NavLink
+          to="/about"
+          className={({ isActive }) =>
+            `${isActive ? "underline underline-offset-[6px]" : ""} px-2`
+          }
+        >
+          About
         </NavLink>
       </ul>
     </nav>
